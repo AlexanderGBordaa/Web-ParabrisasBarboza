@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Productos",
+    "description": "Parabrisas y productos disponibles para cotización"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "brand": { "type": "enumeration", "enum": ["Toyota", "Volkswagen", "Chevrolet", "Otra"], "required": true },
+    "vehicleType": { "type": "enumeration", "enum": ["Sedán", "SUV", "Pickup", "Furgón", "Otro"], "required": true },
+    "minimumYear": { "type": "integer", "default": 2010, "min": 2010, "required": true },
+    "description": { "type": "text" },
+    "price": { "type": "decimal", "required": true },
+    "stock": { "type": "integer", "default": 0, "min": 0, "required": true },
+    "stockStatus": { "type": "enumeration", "enum": ["En stock", "Últimas unidades", "Bajo pedido", "Agotado"], "default": "En stock", "required": true },
+    "image": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] },
+    "featured": { "type": "boolean", "default": false }
+  }
+}

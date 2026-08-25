@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Servicios",
+    "description": "Servicios mostrados en la página principal"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "linkLabel": { "type": "string", "default": "Cotizar servicio" },
+    "icon": { "type": "string" },
+    "order": { "type": "integer", "default": 0 }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonios",
+    "description": "Reseñas verificadas de clientes"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "customerName": { "type": "string", "required": true },
+    "quote": { "type": "text", "required": true },
+    "rating": { "type": "integer", "default": 5, "min": 1, "max": 5 },
+    "verified": { "type": "boolean", "default": true }
+  }
+}
