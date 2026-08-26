@@ -11,16 +11,16 @@
       theme: {
         extend: {
           colors: {
-            ink: '#17232b',
-            petrol: '#123f46',
-            aqua: '#6fd7d0',
-            sun: '#f2bd5b',
-            paper: '#f5f3ed',
-            mist: '#dfe9e6'
+            ink: '#102a35',
+            petrol: '#0f3d4a',
+            aqua: '#62d4d8',
+            sun: '#f6bd45',
+            paper: '#f7f5f0',
+            mist: '#e4efed'
           },
           fontFamily: {
-            display: ['DM Sans', 'sans-serif'],
-            body: ['Manrope', 'sans-serif']
+            display: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
           },
           boxShadow: {
             soft: '0 18px 45px rgba(23, 35, 43, 0.10)'
@@ -31,11 +31,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #f5f3ed; color: #17232b; font-family: Manrope, sans-serif; }
-    .display { font-family: 'DM Sans', sans-serif; }
+    body { background: #f7f5f0; color: #102a35; font-family: Inter, sans-serif; }
+    .display { font-family: Outfit, sans-serif; }
+    #inicio { isolation: isolate; }
+    .hero-image { z-index: 0; filter: saturate(.82) contrast(.94) brightness(.72); }
+    .hero-overlay { z-index: 1; background: linear-gradient(90deg, rgba(5, 27, 36, .94) 0%, rgba(8, 39, 49, .78) 45%, rgba(8, 33, 41, .46) 100%); }
     .logo-mark { position: relative; width: 42px; height: 34px; border-left: 9px solid #3d3d3d; border-top: 9px solid #3d3d3d; border-radius: 30px 0 0 0; }
     .logo-mark::after { content: ''; position: absolute; left: 9px; top: 9px; width: 25px; height: 19px; border-left: 8px solid #a52121; border-top: 8px solid #a52121; border-radius: 19px 0 0 0; }
     .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E"); }
@@ -50,7 +53,7 @@
   <div class="bg-petrol text-white text-center text-xs tracking-[0.16em] py-2 px-4">ATENCIÓN EN TALLER Y A DOMICILIO · COTIZA SIN COMPROMISO</div>
 
   <header class="absolute top-9 left-0 right-0 z-20">
-    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between" aria-label="Navegación principal">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-6 py-3 flex items-center justify-between bg-ink/55 backdrop-blur-sm rounded-2xl" aria-label="Navegación principal">
       <a href="#inicio" class="flex items-center gap-3 text-white" aria-label="Parabrisas Barboza, inicio">
         <span class="logo-mark bg-white/95 shrink-0" aria-hidden="true"></span>
         <span class="leading-[.9]"><strong class="display block text-[15px] tracking-[.04em]">PARABRISAS</strong><strong class="display block text-[17px] font-normal tracking-[.06em] text-red-300">BARBOZA</strong></span>
@@ -73,8 +76,8 @@
 
   <main>
     <section id="inicio" class="relative min-h-[720px] lg:min-h-[790px] overflow-hidden bg-petrol text-white grain">
-      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,63,70,.98)_0%,rgba(18,63,70,.78)_43%,rgba(18,63,70,.18)_100%)]"></div>
-      <img class="absolute inset-0 w-full h-full object-cover object-center -z-0" src="https://loremflickr.com/2200/1200/toyota,car?lock=11" alt="Toyota visto desde el frente" fetchpriority="high">
+      <div class="hero-overlay absolute inset-0"></div>
+      <img class="hero-image absolute inset-0 w-full h-full object-cover object-center" src="https://loremflickr.com/2200/1200/toyota,car?lock=11" alt="Toyota visto desde el frente" fetchpriority="high">
       <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 pt-40 lg:pt-52 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
         <div class="max-w-2xl reveal">
           <p class="uppercase text-aqua text-xs font-bold tracking-[0.24em] mb-6">Más de 15 años cuidando tu camino</p>
@@ -116,11 +119,11 @@
 
     <section id="catalogo" class="bg-white py-24">
       <div class="max-w-7xl mx-auto px-5 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Catálogo disponible</p><h2 class="display text-4xl lg:text-5xl font-bold">Encuentra tu parabrisas.</h2></div><div class="flex gap-2 text-sm"><button class="bg-petrol text-white px-4 py-2 rounded-full">Todos</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Sedán</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">SUV</button></div></div>
+        <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Catálogo disponible</p><h2 class="display text-4xl lg:text-5xl font-bold">Encuentra tu parabrisas.</h2><p class="text-sm text-ink/60 mt-3">Valores de referencia en pesos argentinos. Confirmamos compatibilidad, colocación y precio final por WhatsApp.</p></div><div class="flex gap-2 text-sm"><button class="bg-petrol text-white px-4 py-2 rounded-full">Todos</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Sedán</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Pick-up</button></div></div>
         <div class="grid md:grid-cols-3 gap-5">
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="parabrisas-laminado.jpg" alt="Parabrisas laminado de vidrio automotriz" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Toyota · Sedán · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas laminado</h3></div><p class="text-lg font-bold">$189.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1">● En stock</span><button class="addCart text-petrol text-sm font-bold" data-product="Toyota · Parabrisas laminado">Agregar +</button></div></div></article>
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://loremflickr.com/900/600/volkswagen,windshield,car?lock=13" alt="Parabrisas de Volkswagen SUV modelo 2010 en adelante" class="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Volkswagen · SUV · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas acústico</h3></div><p class="text-lg font-bold">$249.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-sun bg-amber-50 rounded-full px-3 py-1">● Últimas 2</span><button class="addCart text-petrol text-sm font-bold" data-product="Volkswagen · Parabrisas acústico">Agregar +</button></div></div></article>
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://loremflickr.com/900/600/chevrolet,windshield,car?lock=14" alt="Parabrisas de Chevrolet pickup modelo 2010 en adelante" class="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Chevrolet · Pickup · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas con sensor</h3></div><p class="text-lg font-bold">$289.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-ink/50 bg-paper rounded-full px-3 py-1">● Bajo pedido</span><button class="addCart text-petrol text-sm font-bold" data-product="Chevrolet · Parabrisas con sensor">Consultar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="parabrisas-laminado.jpg" alt="Parabrisas laminado para Toyota Corolla" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Toyota Corolla · Sedán · 2014–2019</p><h3 class="display text-xl font-bold mt-1">Parabrisas laminado</h3><p class="text-sm text-ink/60 mt-2">Vidrio de seguridad con franja parasol. Consultá por versión con sensor.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $349.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1">● En stock</span><button class="addCart text-petrol text-sm font-bold" data-product="Toyota Corolla · Parabrisas laminado">Agregar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://quickfitautos.com/wp-content/uploads/2020/11/Auto-Glass-Windscreen-min.png" alt="Parabrisas de repuesto para Volkswagen Amarok" class="w-full h-full object-contain p-3 group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Volkswagen Amarok · Pick-up · 2010–2022</p><h3 class="display text-xl font-bold mt-1">Parabrisas con captor</h3><p class="text-sm text-ink/60 mt-2">Laminado con alojamiento para sensor. Verificamos el código antes de colocar.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $399.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-sun bg-amber-50 rounded-full px-3 py-1">● Últimas 2</span><button class="addCart text-petrol text-sm font-bold" data-product="Volkswagen Amarok · Parabrisas con captor">Agregar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://www.carid.com/images/pages/windshield/replacement-auto-glass.jpg" alt="Parabrisas automotriz de repuesto con borde cerámico" class="w-full h-full object-contain p-3 group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Chevrolet S10 · Pick-up · 2012–2024</p><h3 class="display text-xl font-bold mt-1">Parabrisas con sensor</h3><p class="text-sm text-ink/60 mt-2">Compatible con cámara o sensor según versión. Cotización final por chasis.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $549.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-ink/50 bg-paper rounded-full px-3 py-1">● A pedido</span><button class="addCart text-petrol text-sm font-bold" data-product="Chevrolet S10 · Parabrisas con sensor">Consultar +</button></div></div></article>
         </div>
       </div>
     </section>
