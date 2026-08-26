@@ -11,16 +11,16 @@
       theme: {
         extend: {
           colors: {
-            ink: '#17232b',
-            petrol: '#123f46',
-            aqua: '#6fd7d0',
-            sun: '#f2bd5b',
-            paper: '#f5f3ed',
-            mist: '#dfe9e6'
+            ink: '#102a35',
+            petrol: '#0f3d4a',
+            aqua: '#62d4d8',
+            sun: '#f6bd45',
+            paper: '#f7f5f0',
+            mist: '#e4efed'
           },
           fontFamily: {
-            display: ['DM Sans', 'sans-serif'],
-            body: ['Manrope', 'sans-serif']
+            display: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
           },
           boxShadow: {
             soft: '0 18px 45px rgba(23, 35, 43, 0.10)'
@@ -31,11 +31,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #f5f3ed; color: #17232b; font-family: Manrope, sans-serif; }
-    .display { font-family: 'DM Sans', sans-serif; }
+    body { background: #f7f5f0; color: #102a35; font-family: Inter, sans-serif; }
+    .display { font-family: Outfit, sans-serif; }
+    #inicio { isolation: isolate; }
+    .hero-image { z-index: 0; filter: saturate(.82) contrast(.94) brightness(.72); }
+    .hero-overlay { z-index: 1; background: linear-gradient(90deg, rgba(5, 27, 36, .94) 0%, rgba(8, 39, 49, .78) 45%, rgba(8, 33, 41, .46) 100%); }
     .logo-mark { position: relative; width: 42px; height: 34px; border-left: 9px solid #3d3d3d; border-top: 9px solid #3d3d3d; border-radius: 30px 0 0 0; }
     .logo-mark::after { content: ''; position: absolute; left: 9px; top: 9px; width: 25px; height: 19px; border-left: 8px solid #a52121; border-top: 8px solid #a52121; border-radius: 19px 0 0 0; }
     .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E"); }
@@ -49,11 +52,11 @@
 <body>
   <div class="bg-petrol text-white text-center text-xs tracking-[0.16em] py-2 px-4">ATENCIÓN EN TALLER Y A DOMICILIO · COTIZA SIN COMPROMISO</div>
 
-  <header class="absolute top-9 left-0 right-0 z-20">
-    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between" aria-label="Navegación principal">
-      <a href="#inicio" class="flex items-center gap-3 text-white" aria-label="Parabrisas Barboza, inicio">
-        <span class="logo-mark bg-white/95 shrink-0" aria-hidden="true"></span>
-        <span class="leading-[.9]"><strong class="display block text-[15px] tracking-[.04em]">PARABRISAS</strong><strong class="display block text-[17px] font-normal tracking-[.06em] text-red-300">BARBOZA</strong></span>
+  <header class="absolute top-4 sm:top-9 left-0 right-0 z-20 px-3 sm:px-0">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 flex items-center justify-between bg-ink/70 sm:bg-ink/55 backdrop-blur-sm rounded-2xl" aria-label="Navegación principal">
+      <a href="#inicio" class="flex items-center gap-2 sm:gap-3 text-white" aria-label="Parabrisas Barboza, inicio">
+        <span class="logo-mark bg-white/95 shrink-0 scale-[.85] sm:scale-100" aria-hidden="true"></span>
+        <span class="leading-[.9]"><strong class="display block text-[13px] sm:text-[15px] tracking-[.04em]">PARABRISAS</strong><strong class="display block text-[14px] sm:text-[17px] font-normal tracking-[.06em] text-red-300">BARBOZA</strong></span>
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm text-white/80">
         <a class="hover:text-white transition" href="#servicios">Servicios</a>
@@ -61,30 +64,42 @@
         <a class="hover:text-white transition" href="#proceso">Cómo funciona</a>
         <a class="hover:text-white transition" href="#contacto">Contacto</a>
       </div>
-      <div class="flex items-center gap-3">
-        <button id="cartButton" class="relative bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full p-3 transition" aria-label="Abrir carrito">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="cartButton" class="relative bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full p-2.5 sm:p-3 transition" aria-label="Abrir carrito">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
           <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-sun text-ink text-[10px] grid place-items-center font-bold">0</span>
         </button>
         <a href="#contacto" class="hidden sm:inline-flex items-center bg-sun text-ink px-5 py-3 rounded-full text-sm font-bold hover:bg-white transition">Cotizar ahora</a>
+        <button id="menuButton" class="md:hidden bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full p-2.5 transition" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </nav>
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto mt-2">
+      <div class="bg-ink/90 backdrop-blur-sm rounded-2xl p-5 flex flex-col text-white/85 text-base">
+        <a class="py-2.5 border-b border-white/10 hover:text-white transition" href="#servicios">Servicios</a>
+        <a class="py-2.5 border-b border-white/10 hover:text-white transition" href="#catalogo">Catálogo</a>
+        <a class="py-2.5 border-b border-white/10 hover:text-white transition" href="#proceso">Cómo funciona</a>
+        <a class="py-2.5 hover:text-white transition" href="#contacto">Contacto</a>
+        <a href="#contacto" class="mt-3 inline-flex justify-center items-center bg-sun text-ink px-5 py-3 rounded-full text-sm font-bold hover:bg-white transition">Cotizar ahora</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section id="inicio" class="relative min-h-[720px] lg:min-h-[790px] overflow-hidden bg-petrol text-white grain">
-      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,63,70,.98)_0%,rgba(18,63,70,.78)_43%,rgba(18,63,70,.18)_100%)]"></div>
-      <img class="absolute inset-0 w-full h-full object-cover object-center -z-0" src="https://loremflickr.com/2200/1200/toyota,car?lock=11" alt="Toyota visto desde el frente" fetchpriority="high">
-      <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 pt-40 lg:pt-52 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+    <section id="inicio" class="relative min-h-[560px] sm:min-h-[720px] lg:min-h-[790px] overflow-hidden bg-petrol text-white grain">
+      <div class="hero-overlay absolute inset-0"></div>
+      <img class="hero-image absolute inset-0 w-full h-full object-cover object-center" src="https://loremflickr.com/2200/1200/toyota,car?lock=11" alt="Toyota visto desde el frente" fetchpriority="high">
+      <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 pt-28 sm:pt-36 lg:pt-52 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
         <div class="max-w-2xl reveal">
-          <p class="uppercase text-aqua text-xs font-bold tracking-[0.24em] mb-6">Más de 15 años cuidando tu camino</p>
-          <h1 class="display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[.94] tracking-tight">Tu visión,<br><span class="text-sun">nuestra prioridad.</span></h1>
-          <p class="mt-7 text-lg text-white/75 max-w-lg leading-relaxed">Cambio, reparación y venta de parabrisas con instalación profesional, atención clara y garantía real.</p>
-          <div class="flex flex-wrap gap-3 mt-9">
-            <a href="#catalogo" class="inline-flex items-center gap-2 bg-sun text-ink px-6 py-4 rounded-full font-bold hover:bg-white transition">Ver parabrisas <span aria-hidden="true">↗</span></a>
-            <a href="#servicios" class="inline-flex items-center gap-2 border border-white/35 px-6 py-4 rounded-full font-bold hover:bg-white/10 transition">Conocer servicios</a>
+          <p class="uppercase text-aqua text-[11px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.24em] mb-4 sm:mb-6">Más de 15 años cuidando tu camino</p>
+          <h1 class="display text-4xl sm:text-6xl lg:text-8xl font-bold leading-[1.02] sm:leading-[.94] tracking-tight">Tu visión,<br><span class="text-sun">nuestra prioridad.</span></h1>
+          <p class="mt-5 sm:mt-7 text-base sm:text-lg text-white/75 max-w-lg leading-relaxed">Cambio, reparación y venta de parabrisas con instalación profesional, atención clara y garantía real.</p>
+          <div class="flex flex-wrap gap-3 mt-7 sm:mt-9">
+            <a href="#catalogo" class="inline-flex items-center gap-2 bg-sun text-ink px-5 sm:px-6 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-white transition">Ver parabrisas <span aria-hidden="true">↗</span></a>
+            <a href="#servicios" class="inline-flex items-center gap-2 border border-white/35 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-white/10 transition">Conocer servicios</a>
           </div>
-          <div class="flex items-center gap-6 mt-12 text-sm text-white/65">
+          <div class="flex items-center gap-4 sm:gap-6 mt-9 sm:mt-12 text-sm text-white/65">
             <span><strong class="text-white text-xl display">4.9</strong> / 5 reseñas</span>
             <span class="w-px h-8 bg-white/25"></span>
             <span><strong class="text-white text-xl display">24h</strong> respuesta promedio</span>
@@ -95,7 +110,7 @@
             <div class="flex justify-between items-start mb-20"><span class="text-xs uppercase tracking-[.2em] text-white/60">Servicio express</span><span class="text-sun">●</span></div>
             <p class="display text-3xl font-bold">¿Una grieta<br>en tu camino?</p>
             <p class="text-sm text-white/65 mt-3">Envíanos una foto y recibe un diagnóstico inicial.</p>
-            <a href="#contacto" class="mt-6 block text-center bg-white text-petrol py-3 rounded-full text-sm font-bold hover:bg-sun transition">Enviar foto / consultar</a>
+            <a href="https://wa.me/5493442454313?text=Hola%2C%20quiero%20consultar%20por%20una%20grieta%20en%20mi%20parabrisas.%20Te%20env%C3%ADo%20una%20foto." target="_blank" rel="noopener noreferrer" class="mt-6 block text-center bg-white text-petrol py-3 rounded-full text-sm font-bold hover:bg-sun transition">Enviar por WhatsApp</a>
           </div>
         </div>
       </div>
@@ -116,11 +131,11 @@
 
     <section id="catalogo" class="bg-white py-24">
       <div class="max-w-7xl mx-auto px-5 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Catálogo disponible</p><h2 class="display text-4xl lg:text-5xl font-bold">Encuentra tu parabrisas.</h2></div><div class="flex gap-2 text-sm"><button class="bg-petrol text-white px-4 py-2 rounded-full">Todos</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Sedán</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">SUV</button></div></div>
+        <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Catálogo disponible</p><h2 class="display text-3xl sm:text-4xl lg:text-5xl font-bold">Encuentra tu parabrisas.</h2><p class="text-sm text-ink/60 mt-3">Valores de referencia en pesos argentinos. Confirmamos compatibilidad, colocación y precio final por WhatsApp.</p></div><div class="flex flex-wrap gap-2 text-sm"><button class="bg-petrol text-white px-4 py-2 rounded-full">Todos</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Sedán</button><button class="bg-paper px-4 py-2 rounded-full hover:bg-mist">Pick-up</button></div></div>
         <div class="grid md:grid-cols-3 gap-5">
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="parabrisas-laminado.jpg" alt="Parabrisas laminado de vidrio automotriz" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Toyota · Sedán · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas laminado</h3></div><p class="text-lg font-bold">$189.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1">● En stock</span><button class="addCart text-petrol text-sm font-bold" data-product="Toyota · Parabrisas laminado">Agregar +</button></div></div></article>
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://loremflickr.com/900/600/volkswagen,windshield,car?lock=13" alt="Parabrisas de Volkswagen SUV modelo 2010 en adelante" class="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Volkswagen · SUV · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas acústico</h3></div><p class="text-lg font-bold">$249.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-sun bg-amber-50 rounded-full px-3 py-1">● Últimas 2</span><button class="addCart text-petrol text-sm font-bold" data-product="Volkswagen · Parabrisas acústico">Agregar +</button></div></div></article>
-          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://loremflickr.com/900/600/chevrolet,windshield,car?lock=14" alt="Parabrisas de Chevrolet pickup modelo 2010 en adelante" class="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Chevrolet · Pickup · 2010 en adelante</p><h3 class="display text-xl font-bold mt-1">Parabrisas con sensor</h3></div><p class="text-lg font-bold">$289.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-ink/50 bg-paper rounded-full px-3 py-1">● Bajo pedido</span><button class="addCart text-petrol text-sm font-bold" data-product="Chevrolet · Parabrisas con sensor">Consultar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="parabrisas-laminado.jpg" alt="Parabrisas laminado para Toyota Corolla" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Toyota Corolla · Sedán · 2014–2019</p><h3 class="display text-xl font-bold mt-1">Parabrisas laminado</h3><p class="text-sm text-ink/60 mt-2">Vidrio de seguridad con franja parasol. Consultá por versión con sensor.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $349.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1">● En stock</span><button class="addCart text-petrol text-sm font-bold" data-product="Toyota Corolla · Parabrisas laminado">Agregar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://quickfitautos.com/wp-content/uploads/2020/11/Auto-Glass-Windscreen-min.png" alt="Parabrisas de repuesto para Volkswagen Amarok" class="w-full h-full object-contain p-3 group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Volkswagen Amarok · Pick-up · 2010–2022</p><h3 class="display text-xl font-bold mt-1">Parabrisas con captor</h3><p class="text-sm text-ink/60 mt-2">Laminado con alojamiento para sensor. Verificamos el código antes de colocar.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $399.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-sun bg-amber-50 rounded-full px-3 py-1">● Últimas 2</span><button class="addCart text-petrol text-sm font-bold" data-product="Volkswagen Amarok · Parabrisas con captor">Agregar +</button></div></div></article>
+          <article class="border border-ink/10 rounded-2xl overflow-hidden group"><div class="h-52 bg-mist overflow-hidden"><img src="https://www.carid.com/images/pages/windshield/replacement-auto-glass.jpg" alt="Parabrisas automotriz de repuesto con borde cerámico" class="w-full h-full object-contain p-3 group-hover:scale-105 transition duration-500"></div><div class="p-5"><div class="flex justify-between gap-3"><div><p class="text-xs text-ink/50 uppercase tracking-wider">Chevrolet S10 · Pick-up · 2012–2024</p><h3 class="display text-xl font-bold mt-1">Parabrisas con sensor</h3><p class="text-sm text-ink/60 mt-2">Compatible con cámara o sensor según versión. Cotización final por chasis.</p></div><p class="text-lg font-bold whitespace-nowrap">Desde $549.900</p></div><div class="flex justify-between items-center mt-5"><span class="text-xs font-bold text-ink/50 bg-paper rounded-full px-3 py-1">● A pedido</span><button class="addCart text-petrol text-sm font-bold" data-product="Chevrolet S10 · Parabrisas con sensor">Consultar +</button></div></div></article>
         </div>
       </div>
     </section>
@@ -132,7 +147,7 @@
 
     <section class="bg-sun py-20"><div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-[1fr_1.4fr] gap-12 items-center"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Lo dicen nuestros clientes</p><p class="display text-3xl lg:text-4xl font-bold leading-tight">“Rápidos, transparentes y el trabajo quedó impecable.”</p><p class="text-sm mt-5 text-petrol/70">— Mauricio R., cliente verificado</p></div><div class="grid sm:grid-cols-3 gap-8 text-petrol"><div><strong class="display text-4xl">15+</strong><p class="text-sm mt-1">años de experiencia</p></div><div><strong class="display text-4xl">2.500</strong><p class="text-sm mt-1">instalaciones realizadas</p></div><div><strong class="display text-4xl">6 meses</strong><p class="text-sm mt-1">de garantía de instalación</p></div></div></div></section>
 
-    <section id="contacto" class="max-w-7xl mx-auto px-5 lg:px-8 py-24 grid lg:grid-cols-[.9fr_1.1fr] gap-16"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Hablemos</p><h2 class="display text-4xl lg:text-5xl font-bold leading-tight">Tu próximo viaje empieza aquí.</h2><p class="mt-5 text-ink/60 leading-relaxed">Déjanos tus datos y te respondemos con una cotización inicial.</p><div class="mt-10 space-y-4 text-sm"><p><strong class="block">Taller Barboza</strong>Av. Las Industrias 1240, Santiago</p><p><strong class="block">Horario</strong>Lun–Vie 09:00–18:30 · Sáb 09:00–14:00</p><p><strong class="block">WhatsApp</strong>+56 9 5555 0123</p></div></div><form class="bg-white p-7 lg:p-9 rounded-2xl shadow-soft" onsubmit="event.preventDefault(); document.getElementById('formMessage').classList.remove('hidden');"><div class="grid sm:grid-cols-2 gap-5"><label class="text-sm font-bold">Nombre<input required type="text" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="Tu nombre"></label><label class="text-sm font-bold">Teléfono<input required type="tel" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="+56 9..."></label></div><label class="block text-sm font-bold mt-5">¿Qué necesitas?<select class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua"><option>Cotizar cambio de parabrisas</option><option>Reparar un impacto</option><option>Agendar instalación a domicilio</option></select></label><label class="block text-sm font-bold mt-5">Cuéntanos un poco más<textarea rows="3" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="Marca, modelo y año de tu vehículo"></textarea></label><button class="mt-6 w-full bg-petrol text-white py-4 rounded-full font-bold hover:bg-ink transition">Solicitar cotización ↗</button><p id="formMessage" class="hidden text-center text-emerald-700 text-sm mt-4">Recibimos tu solicitud. Te contactaremos pronto.</p></form></section>
+    <section id="contacto" class="max-w-7xl mx-auto px-5 lg:px-8 py-24 grid lg:grid-cols-[.9fr_1.1fr] gap-16"><div><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4">Hablemos</p><h2 class="display text-4xl lg:text-5xl font-bold leading-tight">Tu próximo viaje empieza aquí.</h2><p class="mt-5 text-ink/60 leading-relaxed">Déjanos tus datos y te respondemos con una cotización inicial.</p><div class="mt-10 space-y-4 text-sm"><p><strong class="block">Taller Parabrisas Barboza</strong>Av. Las Industrias 1240, Santiago</p><p><strong class="block">Horario</strong>Lun–Vie 09:00–18:30 · Sáb 09:00–14:00</p><p><strong class="block">WhatsApp</strong>+54 9 3442 454313</p></div></div><form class="bg-white p-7 lg:p-9 rounded-2xl shadow-soft" onsubmit="event.preventDefault(); document.getElementById('formMessage').classList.remove('hidden');"><div class="grid sm:grid-cols-2 gap-5"><label class="text-sm font-bold">Nombre<input required type="text" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="Tu nombre"></label><label class="text-sm font-bold">Teléfono<input required type="tel" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="+54 9..."></label></div><label class="block text-sm font-bold mt-5">¿Qué necesitas?<select class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua"><option>Cotizar cambio de parabrisas</option><option>Reparar un impacto</option><option>Agendar instalación a domicilio</option></select></label><label class="block text-sm font-bold mt-5">Cuéntanos un poco más<textarea rows="3" class="mt-2 w-full bg-paper rounded-lg p-3 font-normal outline-none focus:ring-2 focus:ring-aqua" placeholder="Marca, modelo y año de tu vehículo"></textarea></label><button class="mt-6 w-full bg-petrol text-white py-4 rounded-full font-bold hover:bg-ink transition">Solicitar cotización ↗</button><p id="formMessage" class="hidden text-center text-emerald-700 text-sm mt-4">Recibimos tu solicitud. Te contactaremos pronto.</p></form></section>
 
     <section class="bg-mist py-20"><div class="max-w-3xl mx-auto px-5"><p class="text-petrol uppercase text-xs font-bold tracking-[.2em] mb-4 text-center">Preguntas frecuentes</p><h2 class="display text-3xl font-bold text-center mb-10">Lo que necesitas saber antes de decidir.</h2><div class="space-y-3"><details class="bg-white rounded-xl p-5 group"><summary class="font-bold cursor-pointer list-none flex justify-between">¿Cuánto demora un cambio? <span class="text-petrol">+</span></summary><p class="text-sm text-ink/60 mt-4 leading-relaxed">La mayoría de las instalaciones toma entre 90 y 120 minutos, dependiendo del modelo y los sensores.</p></details><details class="bg-white rounded-xl p-5 group"><summary class="font-bold cursor-pointer list-none flex justify-between">¿La instalación tiene garantía? <span class="text-petrol">+</span></summary><p class="text-sm text-ink/60 mt-4 leading-relaxed">Sí. Todas nuestras instalaciones incluyen seis meses de garantía contra filtraciones.</p></details><details class="bg-white rounded-xl p-5 group"><summary class="font-bold cursor-pointer list-none flex justify-between">¿Pueden ir a mi domicilio? <span class="text-petrol">+</span></summary><p class="text-sm text-ink/60 mt-4 leading-relaxed">Sí, coordinamos instalaciones a domicilio dentro de la zona de cobertura.</p></details></div></div></section>
   </main>
@@ -169,6 +184,14 @@
       }
     }
     loadCmsProducts();
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuButton.setAttribute('aria-expanded', String(open));
+    }
+    menuButton.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
     const cartButton = document.getElementById('cartButton');
     const cartPanel = document.getElementById('cartPanel');
     const cartCount = document.getElementById('cartCount');

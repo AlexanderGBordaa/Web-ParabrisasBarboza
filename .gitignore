@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+cms/node_modules/
+
+# Environment variables (nunca subir secretos)
+.env
+.env.local
+.env.*.local
+
+# Strapi build / cache
+cms/build/
+cms/dist/
+cms/.cache/
+cms/.tmp/
+cms/exports/
+*.cache
+
+# Base de datos local (sqlite)
+cms/.tmp/data.db
+*.sqlite
+*.sqlite3
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
