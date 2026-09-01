@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cómo trabajamos en Parabrisas Barboza: el servicio paso a paso y preguntas frecuentes.">
   <title>Cómo trabajamos | Parabrisas Barboza</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parabrisas Barboza">
+  <meta property="og:title" content="Cómo trabajamos | Parabrisas Barboza">
+  <meta property="og:description" content="De la duda a la ruta en tres pasos: consulta, cotización clara e instalación con garantía.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cómo trabajamos | Parabrisas Barboza">
+  <meta name="twitter:description" content="De la duda a la ruta en tres pasos: consulta, cotización clara e instalación con garantía.">
+  <link rel="icon" href="favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuánto demora un cambio?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de las instalaciones toma entre 90 y 120 minutos, dependiendo del modelo y los sensores." } },
+      { "@type": "Question", "name": "¿La instalación tiene garantía?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las instalaciones incluyen seis meses de garantía contra filtraciones." } },
+      { "@type": "Question", "name": "¿Pueden ir a mi domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, se coordinan instalaciones a domicilio dentro de la zona de cobertura." } },
+      { "@type": "Question", "name": "¿Cómo los contacto?", "acceptedAnswer": { "@type": "Answer", "text": "Por WhatsApp o Instagram, con un tiempo de respuesta promedio de 24 horas." } }
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -106,5 +127,10 @@
     menuButton.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
   </script>
+
+  <a href="https://wa.me/5493442454313?text=Hola%2C%20quiero%20consultar%20sobre%20un%20parabrisas." target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="sm:hidden fixed bottom-5 right-5 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-[0_10px_30px_rgba(16,185,129,0.45)] hover:bg-emerald-400 transition-all">
+    <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-40"></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" class="relative" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.44-1.36a9.9 9.9 0 0 0 4.6 1.14h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.05 14.02c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.2-1.43-1.35-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
+  </a>
 </body>
 </html>
