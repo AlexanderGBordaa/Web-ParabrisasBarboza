@@ -34,6 +34,7 @@
     body { background: #f7f5f0; color: #102a35; font-family: Inter, sans-serif; }
     .display { font-family: Outfit, sans-serif; }
     .hero-image { z-index: 0; filter: saturate(.82) contrast(.94) brightness(.72); }
+    .hero-slide { transition: opacity 1.4s ease-in-out; }
     .hero-overlay { z-index: 1; background: linear-gradient(90deg, rgba(5, 27, 36, .94) 0%, rgba(8, 39, 49, .78) 45%, rgba(8, 33, 41, .46) 100%); }
     .logo-mark { position: relative; width: 42px; height: 34px; border-left: 9px solid #3d3d3d; border-top: 9px solid #3d3d3d; border-radius: 30px 0 0 0; }
     .logo-mark::after { content: ''; position: absolute; left: 9px; top: 9px; width: 25px; height: 19px; border-left: 8px solid #a52121; border-top: 8px solid #a52121; border-radius: 19px 0 0 0; }
@@ -85,7 +86,13 @@
   <main>
     <section class="relative min-h-[500px] sm:min-h-[620px] lg:min-h-[700px] overflow-hidden bg-petrol text-white grain">
       <div class="hero-overlay absolute inset-0"></div>
-      <img class="hero-image absolute inset-0 w-full h-full object-cover object-center" src="https://loremflickr.com/2200/1200/toyota,car?lock=11" alt="Toyota visto desde el frente" fetchpriority="high">
+      <div class="hero-image absolute inset-0 w-full h-full" aria-hidden="true">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-100" src="images/taller-fachada.png" alt="Fachada del local de Parabrisas Barboza" fetchpriority="high">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" src="images/instalacion-parabrisas.png" alt="Instalación de un parabrisas nuevo">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" src="images/camioneta-flota.png" alt="Camioneta con el logo de Parabrisas Barboza">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" src="images/grabado-cristal.png" alt="Grabado de cristal del automotor">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" src="images/instalacion-campo.png" alt="Instalación de parabrisas a domicilio">
+      </div>
       <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 py-16 sm:py-24 lg:py-28 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
         <div class="max-w-2xl reveal">
           <h1 class="display text-4xl sm:text-6xl lg:text-8xl font-bold leading-[1.02] sm:leading-[.94] tracking-tight">Tu visión,<br><span class="text-sun">nuestra prioridad.</span></h1>
@@ -161,6 +168,16 @@
     }
     menuButton.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 1) {
+      let heroIndex = 0;
+      setInterval(() => {
+        heroSlides[heroIndex].classList.replace('opacity-100', 'opacity-0');
+        heroIndex = (heroIndex + 1) % heroSlides.length;
+        heroSlides[heroIndex].classList.replace('opacity-0', 'opacity-100');
+      }, 4500);
+    }
   </script>
 
   <a href="https://wa.me/5493442454313?text=Hola%2C%20quiero%20consultar%20sobre%20un%20parabrisas." target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="sm:hidden fixed bottom-5 right-5 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-[0_10px_30px_rgba(16,185,129,0.45)] hover:bg-emerald-400 transition-all">
